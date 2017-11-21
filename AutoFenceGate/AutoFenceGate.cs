@@ -11,10 +11,13 @@ namespace AutoFenceGate
     public class ModEntry : Mod
     {
 
+        private ModConfig config;
         private Dictionary<Vector2, Fence> trackedFenceGates = new Dictionary<Vector2, Fence>();
 
         public override void Entry(IModHelper helper)
         {
+            config = helper.ReadConfig<ModConfig>();
+
             GameEvents.SecondUpdateTick += this.autoOpenFenceGate;
             GameEvents.HalfSecondTick += this.autoCloseFenceGate;
         }
@@ -24,8 +27,7 @@ namespace AutoFenceGate
             if (!Context.IsWorldReady) return;
             if (!Context.CanPlayerMove || !Game1.player.isMoving()) return;
 
-            // TODO:
-            // Add a config option to only enable this feature while riding a horse
+            if (config.onlyWhileRidingHorse && !Game1.player.isRidingHorse()) return;
 
             int playerX = Game1.player.getTileX();
             int playerY = Game1.player.getTileY();
@@ -72,11 +74,9 @@ namespace AutoFenceGate
                     fenceGatesToUntrack.Add(fenceGateLocation);
                     continue;
                 }
-
-                // TODO:
-                // Make max fence-to-player distance configurable
+                
                 float playerDistance = Vector2.Distance(playerPosition, fenceGateLocation);
-                if (playerDistance > 1.1f)
+                if (playerDistance > config.maxStayOpenDistance)
                 {
                     trackedFenceGates[fenceGateLocation].checkForAction(Game1.player, false);
                     fenceGatesToUntrack.Add(fenceGateLocation);
@@ -88,5 +88,11 @@ namespace AutoFenceGate
                 trackedFenceGates.Remove(fenceGateLocation);
             }
         }
+    }
+
+    class ModConfig
+    {
+        public bool onlyWhileRidingHorse { get; set; } = false;
+        public float maxStayOpenDistance { get; set; } = 1.1f;
     }
 }
