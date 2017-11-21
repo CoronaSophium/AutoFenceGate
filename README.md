@@ -4,7 +4,7 @@ No more accidentally dismounting your horse while trying to open a fence gate.
 1. Walk towards, open fence gate
 2. Walk through, close fence gate
 
-Visit [/releases](/releases) for the least download and instructions.
+Click <a href="https://github.com/CoronaSophium/AutoFenceGate/releases/latest" target="_blank">here</a> for the least release's download and instructions.
 
 ## Config
 Checkout `Stardew Valley/Mods/AutoFenceGate/config.json` for mod configuration:
