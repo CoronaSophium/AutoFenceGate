@@ -1,9 +1,0 @@
-﻿{
-  "Name": "AutoFenceGate",
-  "Author": "Manpreet \"Mannie\" Singh",
-  "Version": "1.1.0",
-  "Description": "Make fencegates behave like automatic doors from your local grocery store—perfect for maneuvering while riding a horse",
-  "UniqueID": "CoronaSophium.AutoFenceGate",
-  "EntryDLL": "AutoFenceGate.dll",
-  "UpdateKeys": [ "GitHub:CoronaSophium/AutoFenceGate" ]
-}

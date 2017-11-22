@@ -7,8 +7,8 @@
     <ProjectGuid>{27DFA478-1A8A-439E-9892-6ABD2AE881A8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoFenceGate</RootNamespace>
-    <AssemblyName>AutoFenceGate</AssemblyName>
+    <RootNamespace>Passage</RootNamespace>
+    <AssemblyName>Passage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoFenceGate.cs" />
+    <Compile Include="Passage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

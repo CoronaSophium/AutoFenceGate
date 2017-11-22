@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoFenceGate", "AutoFenceGate\AutoFenceGate.csproj", "{27DFA478-1A8A-439E-9892-6ABD2AE881A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passage", "Passage\Passage.csproj", "{27DFA478-1A8A-439E-9892-6ABD2AE881A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
