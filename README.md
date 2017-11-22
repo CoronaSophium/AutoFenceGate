@@ -13,6 +13,7 @@ I made this mod out of a random necessity I personally encountered while playing
 
 ## Config
 Checkout `Stardew Valley/Mods/Passage/config.json` for mod configuration:
+
 | Default           | Description                                                                                                                                             | Name                                  |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
 | [bool]: **true**  | while enabled, allows you to travel through doors by simply walking into them                                                                           | **EnableAutoDoorWarp**                |
