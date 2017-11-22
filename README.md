@@ -27,7 +27,7 @@ Checkout `Stardew Valley/Mods/Passage/config.json` for mod configuration:
 	<br />
 	<b><i>Special thanks to:</i> </b>
 	<br />
-	<span>Cat, Prismuth, and spacechase0</span>
+	<span>Cat, Prismuth, spacechase0, and Entoarox</span>
 	<br />
 	<b><i>from the <a href="https://discordapp.com/invite/stardewvalley" target="_blank">Stardew Valley Discord</a>!</i></b>
 </p>
