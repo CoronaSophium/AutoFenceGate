@@ -3,8 +3,10 @@ Ever wish for Pokemon-styled walk-through warp doors, or fence gates that can se
 
 Features
 ---
-- No more accidentally dismounting your horse while trying to open a fence gate
-- That's about the only discernable difference, except the presence of the tiny ghost that hurriedly closes the fence gates behind you
+- Automatic fence gate opening/closing:
+    * Only messes with fence gates that are closed as you approach them
+- Automatic door walk-through warping
+- Adding of a small, semi-transparent ghost that hurriedly closes fence gates behind you
 
 Installation
 ---
