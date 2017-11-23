@@ -87,10 +87,17 @@ namespace Passage
             List<Point> fenceGatesToUntrack = new List<Point>();
             foreach (Point fenceGateLocation in this.TrackedFenceGates.Keys)
             {
-                float playerDistance = Vector2.Distance(Game1.player.getTileLocation(), new Vector2(fenceGateLocation.X, fenceGateLocation.Y));
-
                 Fence fenceGate = TrackedFenceGates[fenceGateLocation];
-                if (playerDistance <= this.config.MaxDistanceToKeepFenceGateOpen && fenceGate.gatePosition == 88) continue;
+
+                bool IsPlayerInProximityOfGate = Vector2.Distance(Game1.player.getTileLocation(), new Vector2(fenceGateLocation.X, fenceGateLocation.Y)) <= this.config.MaxDistanceToKeepFenceGateOpen;
+                bool HasGateBeenClosed = fenceGate.gatePosition == 0 ? true : false;
+
+                if (HasGateBeenClosed)
+                {
+                    fenceGatesToUntrack.Add(fenceGateLocation);
+                    continue;
+                }
+                if (IsPlayerInProximityOfGate) continue;
 
                 fenceGate.checkForAction(Game1.player, false);
                 fenceGatesToUntrack.Add(fenceGateLocation);
