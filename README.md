@@ -23,12 +23,13 @@ Config
 ---
 Checkout `Stardew Valley/Mods/Passage/config.json` for mod configuration:
 
-| Default           | Description                                                                                                                                             | Name                                  |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
-| [bool]: **true**  | while enabled, allows you to travel through doors by simply walking into them                                                                           | **EnableAutoDoorInteract**            |
-| [bool]: **true**  | while enabled, makes fence gates automatically open as you approach, and close as you leave them behind                                                 | **EnableAutoFenceGateManagement**     |
-| [bool]: **false** | while enabled, requires you to be riding a horse for the automatic fence management to occur                                                            | **OnlyOpenFenceGateWhileRidingHorse** |
-| [float]: **1.1**  | this is how far you must travel away from a fence gate for it to automatically close behind you, after having been automatically opened by walking into | **MaxDistanceToKeepFenceGateOpen**    |
+| Type  | Default   | Description                                                                                                                                             | Name                                  |
+|-------|-----------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
+| bool  | **true**  | while enabled, player auto-interacts with any door-like contraption as they approach it                                                                 | **EnableAutoTransport**               |
+| bool  | **false** | while enabled, player auto-interacts with ladders going down into the mines; disabled by default to prevent accidental leaving of a level too soon      | **EnableAutoMineDownLadder**          |
+| bool  | **true**  | while enabled, makes fence gates automatically open as you approach, and close as you leave them behind                                                 | **EnableAutoFenceGateManagement**     |
+| bool  | **false** | while enabled, requires you to be riding a horse for the automatic fence management to occur                                                            | **OnlyOpenFenceGateWhileRidingHorse** |
+| float | **1.1**   | this is how far you must travel away from a fence gate for it to automatically close behind you, after having been automatically opened by walking into | **MaxDistanceToKeepFenceGateOpen**    |
 
 AutoFence
 ---
