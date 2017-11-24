@@ -29,7 +29,7 @@ Checkout `Stardew Valley/Mods/Passage/config.json` for mod configuration:
 
 AutoFence
 ---
-I made this mod out of a random necessity I personally encountered while playing Stardew Valley and learning C# and Stardew Valley modding. ~~Turns out, however, there's another mod out there that accomplishes the same thing: ~~`AutoGate` by Teban100/eroticremix [[Nexus Mods](https://rd.nexusmods.com/stardewvalley/mods/820/?) - [Forums](https://community.playstarbound.com/threads/autogate-automatically-opening-closing-gates.129074/)].
+I made this mod out of a random necessity I personally encountered while playing Stardew Valley and learning C# and Stardew Valley modding. ~~Turns out, however, there's another mod out there that accomplishes the same thing:~~`AutoGate` by Teban100/eroticremix [[Nexus Mods](https://rd.nexusmods.com/stardewvalley/mods/820/?) - [Forums](https://community.playstarbound.com/threads/autogate-automatically-opening-closing-gates.129074/)].
 
 I've rewritten the mod since its initial release and renamed it from "AutoFenceGate" to "Passage". While AutoFenceGate and AutoFence used to share 100% of their features (bar any configuration differences), Passage now _also_ supports auto-interaction with doors.
 <br />
