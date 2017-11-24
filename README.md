@@ -5,7 +5,11 @@ Features
 ---
 - Automatic fence gate opening/closing:
     * Only messes with fence gates that are closed when you approach them
-- Automatic door interaction -- works with all (tested) forms of doors
+- Automatic door interaction, works with:
+	* Town buildings
+	* Farm buildings (coops, barns)
+	* Mine shaft elevator
+	* Mine shaft ladders to the next level
 - Addition of a tiny, transluscent ghost that hurriedly closes fence gates behind you
 
 Installation

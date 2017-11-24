@@ -7,6 +7,7 @@ using xTile.Dimensions;
 using StardewValley;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
+using StardewValley.Locations;
 
 namespace Passage
 {
@@ -14,13 +15,13 @@ namespace Passage
     {
 
         private ModConfig config;
-        private Dictionary<Point, Fence> TrackedFenceGates = new Dictionary<Point, Fence>();
+        private Dictionary<Point, GameLocation> TrackedFenceGates = new Dictionary<Point, GameLocation>();
 
         public override void Entry(IModHelper helper)
         {
             this.config = helper.ReadConfig<ModConfig>();
             GameEvents.FourthUpdateTick += this.InteractWithObjectAhead;
-            GameEvents.OneSecondTick += this.ManageFenceGates;
+            GameEvents.EighthUpdateTick += this.ManageFenceGates;
         }
 
         private void InteractWithObjectAhead(object Sender, EventArgs e)
@@ -46,16 +47,14 @@ namespace Passage
 
                 // Interact with objectAhead and track it for automatic closing
                 objectAhead.checkForAction(Game1.player, false);
-                TrackedFenceGates.Add(pointAhead, objectAhead as Fence);
+                TrackedFenceGates.Add(pointAhead, Game1.currentLocation);
 
                 return;
             }
 
-            if (this.config.EnableAutoDoorInteract)
+            if (this.config.EnableAutoDoorInteract && !Convert.ToBoolean(Utility.GetDoorType(tileAhead, Game1.currentLocation)))
             {
-                // Check if tile ahead is a known door
-                if (!Convert.ToBoolean(Utility.GetDoorType(tileAhead, Game1.currentLocation))) return;
-                // Interact with tile ahead
+                // Interact with door tile ahead
                 Game1.currentLocation.checkAction(new Location(tileAhead.X, tileAhead.Y), Game1.viewport, Game1.player);
 
                 return;
@@ -72,7 +71,7 @@ namespace Passage
             List<Point> fenceGatesToUntrack = new List<Point>();
             foreach (Point location in TrackedFenceGates.Keys)
             {
-                Fence fenceGate = Game1.currentLocation.getObjectAt(location.X, location.Y) as Fence;
+                Fence fenceGate = TrackedFenceGates[location].getObjectAt(location.X, location.Y) as Fence;
                 if (fenceGate.gatePosition == 0)
                 {
                     // If fence gate is already closed, simply add it to untrack list
@@ -81,9 +80,9 @@ namespace Passage
                 }
 
                 float playerDistance = Vector2.Distance(Game1.player.getTileLocation(), fenceGate.tileLocation);
-                if (playerDistance > this.config.MaxDistanceToKeepFenceGateOpen)
+                if (playerDistance > this.config.MaxDistanceToKeepFenceGateOpen || Game1.currentLocation != TrackedFenceGates[location])
                 {
-                    // If player is too far from fence gate, close and add it to untrack list
+                    // If player is too far from fence gate, or if the player has changed maps, close and add it to untrack list
                     fenceGatesToUntrack.Add(location);
                     fenceGate.checkForAction(Game1.player, false);
                 }

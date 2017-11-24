@@ -1,7 +1,7 @@
 ﻿{
   "Name": "Passage",
   "Author": "Manpreet \"Mannie\" Singh",
-  "Version": "2.1.0",
+  "Version": "2.1.1",
   "Description": "Auto-interact with doors, and add proximity sensing to fence gates",
   "UniqueID": "CoronaSophium.Passage",
   "EntryDLL": "Passage.dll",

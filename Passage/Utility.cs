@@ -3,6 +3,7 @@
 using StardewValley;
 using StardewValley.Locations;
 using StardewValley.Buildings;
+using StardewModdingAPI;
 
 namespace Passage
 {
