@@ -7,7 +7,6 @@ using xTile.Dimensions;
 using StardewValley;
 using StardewModdingAPI;
 using StardewModdingAPI.Events;
-using StardewValley.Locations;
 
 namespace Passage
 {
@@ -29,7 +28,7 @@ namespace Passage
             if (!Context.IsWorldReady || !Context.CanPlayerMove) return;
             if (!Game1.player.isMoving()) return;
 
-            Point pointAhead = Utility.GetPointAheadPlayer(Game1.player, Game1.tileSize);
+            Point pointAhead = Utility.GetPointAheadPlayer();
             Point tileAhead = new Point(pointAhead.X / Game1.tileSize, pointAhead.Y / Game1.tileSize);
             StardewValley.Object objectAhead = (
                 Game1.currentLocation.isObjectAt(pointAhead.X, pointAhead.Y) ? (
@@ -52,9 +51,13 @@ namespace Passage
                 return;
             }
 
-            if (this.config.EnableAutoDoorInteract && !Convert.ToBoolean(Utility.GetDoorType(tileAhead, Game1.currentLocation)))
+            int transportAhead = Utility.GetDoorType(tileAhead);
+            if (this.config.EnableAutoTransport && Convert.ToBoolean(transportAhead))
             {
-                // Interact with door tile ahead
+                // If transportAhead is a ladder going down in the mines, check config to handle or not
+                if (transportAhead == 8 && !this.config.EnableAutoMineDownLadder) return;
+
+                // Interact with transport tile ahead
                 Game1.currentLocation.checkAction(new Location(tileAhead.X, tileAhead.Y), Game1.viewport, Game1.player);
 
                 return;
