@@ -1,7 +1,7 @@
 ﻿{
   "Name": "Passage",
   "Author": "Manpreet \"Mannie\" Singh",
-  "Version": "2.0",
+  "Version": "2.1.0",
   "Description": "Ever wish for Pokemon-styled walk-through warp doors, or fence gates that can sense you approach--you know--like those grocery store sliding doors or vicious predators stalking some prey?",
   "UniqueID": "CoronaSophium.Passage",
   "EntryDLL": "Passage.dll",

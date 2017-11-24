@@ -4,9 +4,9 @@ Ever wish for Pokemon-styled walk-through warp doors, or fence gates that can se
 Features
 ---
 - Automatic fence gate opening/closing:
-    * Only messes with fence gates that are closed as you approach them
-- Automatic door walk-through warping
-- Adding of a small, semi-transparent ghost that hurriedly closes fence gates behind you
+    * Only messes with fence gates that are closed when you approach them
+- Automatic door interaction -- works with all (tested) forms of doors
+- Addition of a tiny, transluscent ghost that hurriedly closes fence gates behind you
 
 Installation
 ---
@@ -22,7 +22,7 @@ Checkout `Stardew Valley/Mods/Passage/config.json` for mod configuration:
 
 | Default           | Description                                                                                                                                             | Name                                  |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
-| [bool]: **true**  | while enabled, allows you to travel through doors by simply walking into them                                                                           | **EnableAutoDoorWarp**                |
+| [bool]: **true**  | while enabled, allows you to travel through doors by simply walking into them                                                                           | **EnableAutoDoorInteract**            |
 | [bool]: **true**  | while enabled, makes fence gates automatically open as you approach, and close as you leave them behind                                                 | **EnableAutoFenceGateManagement**     |
 | [bool]: **false** | while enabled, requires you to be riding a horse for the automatic fence management to occur                                                            | **OnlyOpenFenceGateWhileRidingHorse** |
 | [float]: **1.1**  | this is how far you must travel away from a fence gate for it to automatically close behind you, after having been automatically opened by walking into | **MaxDistanceToKeepFenceGateOpen**    |
